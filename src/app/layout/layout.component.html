@@ -1,27 +1,5 @@
 <div class="app-container">
-  <aside class="sidebar" [class.collapsed]="isSidebarCollapsed">
-    <nav>
-      <ul>
-        @for (item of menuRoutes; track $index) {
-          <li>
-            <a [routerLink]="item.path"
-               routerLinkActive="active"
-               [routerLinkActiveOptions]="{exact:true}">
-              <mat-icon class="material-symbols-outlined">{{ item.data!['icon'] }}</mat-icon>
-              @if (!isSidebarCollapsed) {
-                <span class="label">{{ item.title }}</span>
-              }
-            </a>
-          </li>
-        }
-      </ul>
-    </nav>
-  </aside>
-  <button class="toggle-btn"
-          mat-mini-fab
-          (click)="toggleMenu()">
-    <mat-icon>{{ isSidebarCollapsed ? 'chevron_right' : 'chevron_left' }}</mat-icon>
-  </button>
+  <app-menu [routes]="menuRoutes"></app-menu>
   <main class="main-content">
     <router-outlet></router-outlet>
   </main>
