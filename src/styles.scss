@@ -4,8 +4,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root {
-  @include mat.toolbar-overrides((
-    container-background-color: #004f4f,
-    container-text-color: #00dddd,
+  @include mat.fab-overrides((
+    small-container-shape: 32px,
   ));
 }
+
